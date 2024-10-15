@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        {% block title %}
+        django server
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{%  static 'style.css' %}" />
+  </head>
+  <body>
+    <nav class="nav">
+      <h1 class="navtext">This is Navbar</h1>
+      <ul class="links">
+          <li><a href="{% url "home" %}">Home</a></li>
+          <li><a href="{% url "about" %}">About</a></li>
+          <li><a href="{% url "info" %}">Info</a></li>
+          <li><a href="{% url "product_home" %}">Products</a></li>
+      </ul>
+    </nav>
+    {% block herotext %}
+    <div class="herotext">
+      <h1 style="margin-top : 50px ; margin-bottom : 50px">welcome to django homepage ✌️</h1>
+        <img style="" src="https://media.licdn.com/dms/image/D5612AQEaiidKhazp8Q/article-cover_image-shrink_600_2000/0/1700305225689?e=2147483647&v=beta&t=V1uc7dF85WtUmIMygEdZbKY4rxQraMeZ3dRdXh1dn6s" alt="">
+       
+      </div>
+      {% endblock %} 
+  </body>
+</html>
